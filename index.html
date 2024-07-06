@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amirali Pishdadi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <style>
@@ -100,114 +100,181 @@
     });
   </script>
 </head>
-<body class="bg-background text-foreground font-manrope">
-  <div class="flex min-h-[100dvh] flex-col">
-    <!-- Header Section -->
-    <section class="bg-gradient-to-r from-[hsl(60,5%,90%)] to-[hsl(240,5%,6%)] py-24 md:py-32 lg:py-40">
-      <div class="container mx-auto px-4 md:px-6 lg:px-8">
-        <div class="mx-auto max-w-3xl text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">Amirali Pishdadi
-          </h1>
-          <p class="mt-4 text-xl text-muted-foreground sm:mt-6 sm:text-2xl">Back-end developer</p>
-          <p class="mt-6 text-muted-foreground sm:mt-8 sm:text-xl">
-            I'm a passionate back-end developer with a strong background in building scalable and efficient web
-            applications. I'm
-            currently learning everything and love exploring new technologies. At 16 years old, I enjoy programming and
-            playing
-            volleyball with my friends.
-          </p>
-        </div>
-      </div>
-    </section>
+  <body class="bg-background text-foreground font-manrope">
+    <div class="flex min-h-[100dvh] flex-col">
+      <header class="px-4 lg:px-6 h-14 flex items-center sticky top-0 bg-background z-50" data-id="2">
+        <a data-id="3" class="flex items-center justify-center" href="#" rel="ugc">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span class="sr-only">Amirali Pishdadi's Portfolio</span>
+        </a>
+        <nav class="ml-auto flex gap-4 sm:gap-6" data-id="4">
+          <a data-id="5" class="text-sm font-medium hover:underline underline-offset-4" href="#projects" rel="ugc">
+            Projects
+          </a>
+          <a data-id="6" class="text-sm font-medium hover:underline underline-offset-4" href="#skills" rel="ugc">
+            Skills
+          </a>
+          <a data-id="7" class="text-sm font-medium hover:underline underline-offset-4" href="#contact" rel="ugc">
+            Contact
+          </a>
+        </nav>
+      </header>
 
 
-    <!-- Skills Section -->
-    <section class="py-12 md:py-16 lg:py-20">
-      <div class="container mx-auto px-4 md:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
-        <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" class="inline-block w-6 h-6 mr-2">Python
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"
-                class="inline-block w-6 h-6 mr-2">JavaScript
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/officel/40/000000/php-logo.png" alt="PHP" class="inline-block w-6 h-6 mr-2">PHP
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django" class="inline-block w-6 h-6 mr-2">Django
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/?size=48&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel"
-                class="inline-block w-6 h-6 mr-2">Laravel
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"
-                class="inline-block w-6 h-6 mr-2">React
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwind CSS"
-                class="inline-block w-6 h-6 mr-2">Tailwind CSS
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL"
-                class="inline-block w-6 h-6 mr-2">MySQL
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/powershell.png" alt="PowerShell"
-                class="inline-block w-6 h-6 mr-2">PowerShell
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"
-                class="inline-block w-6 h-6 mr-2">Windows
-            </h3>
-          </div>
-          <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">
-              <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="Visual Studio Code"
-                class="inline-block w-6 h-6 mr-2">VS Code
-            </h3>
+      <!-- Header Section -->
+      <section class="bg-gradient-to-r from-[hsl(60,5%,90%)] to-[hsl(240,5%,6%)] py-24 md:py-32 lg:py-40">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">Amirali Pishdadi
+            </h1>
+            <p class="mt-4 text-xl text-muted-foreground sm:mt-6 sm:text-2xl">Back-end developer</p>
+            <p class="mt-6 text-muted-foreground sm:mt-8 sm:text-xl">
+              I'm a passionate back-end developer with a strong background in building scalable and efficient web
+              applications. I'm
+              currently learning everything and love exploring new technologies. At 16 years old, I enjoy programming and
+              playing
+              volleyball with my friends.
+            </p>
           </div>
         </div>
+      </section>
 
 
-      </div>
-    </section>
+      <!-- Skills Section -->
+      <section id="skills" class="py-12 md:py-16 lg:py-20">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
+          <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" class="inline-block w-6 h-6 mr-2">Python
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"
+                  class="inline-block w-6 h-6 mr-2">JavaScript
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/officel/40/000000/php-logo.png" alt="PHP" class="inline-block w-6 h-6 mr-2">PHP
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django" class="inline-block w-6 h-6 mr-2">Django
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/?size=48&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel"
+                  class="inline-block w-6 h-6 mr-2">Laravel
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"
+                  class="inline-block w-6 h-6 mr-2">React
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwind CSS"
+                  class="inline-block w-6 h-6 mr-2">Tailwind CSS
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL"
+                  class="inline-block w-6 h-6 mr-2">MySQL
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/powershell.png" alt="PowerShell"
+                  class="inline-block w-6 h-6 mr-2">PowerShell
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"
+                  class="inline-block w-6 h-6 mr-2">Windows
+              </h3>
+            </div>
+            <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="Visual Studio Code"
+                  class="inline-block w-6 h-6 mr-2">Visual Studio Code
+              </h3>
+            </div>
+          </div>
 
-    <section class="py-12 md:py-16 lg:py-20">
-      <div class="container mx-auto px-4 md:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects</h2>
-        <div id="projects-container" class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Dynamic projects will be inserted here -->
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer Section -->
-    <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-      <p class="text-xs text-muted-foreground">© 2024 Amirali Pishdadi. All rights reserved.</p>
-    </footer>
-  </div>
-</body>
+      <section id="projects" class="py-12 md:py-16 lg:py-20">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects</h2>
+          <div id="projects-container" class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Dynamic projects will be inserted here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="w-full py-12 md:py-24 lg:py-32" data-id="69">
+        <div class="container px-4 md:px-6" data-id="70">
+          <div class="space-y-4 text-center" data-id="71">
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" data-id="72">Get in Touch</h2>
+            <p class="max-w-[700px] mx-auto text-muted-foreground md:text-xl" data-id="73">Have a project in mind? Let's
+              discuss how I can help bring your ideas to life.</p>
+          </div>
+          <form class="max-w-md mx-auto mt-8 space-y-4" data-id="74">
+            <input
+              class="flex h-10 border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              placeholder="Name" data-id="75" type="text" aria-label="Your name">
+            <input
+              class="flex h-10 border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              placeholder="Email" data-id="76" type="email" aria-label="Your email">
+            <textarea
+              class="flex min-h-[80px] border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              placeholder="Message" data-id="77" aria-label="Your message"></textarea>
+            <button
+              class="border border-dashed inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background focus-visible:ring-offset-2 h-10 w-full px-4 py-3 rounded-md bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              type="submit" data-id="78">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+
+      <!-- Footer Section -->
+      <footer class="flex flex-col gap-1 sm:flex-row py-3 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p class="text-xs text-muted-foreground">© 2024 Amirali Pishdadi. All rights reserved.</p>
+        <div class="sm:ml-auto flex gap-4 sm:gap-6 border border-dashed border-white p-2 rounded">
+          <a href="https://github.com/amirali-pishdadi" target="_blank" class="text-xs hover:underline underline-offset-4">
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub"
+              class="inline-block w-6 h-6 mr-2">
+          </a>
+          <a href="https://www.instagram.com/ampishdadi" target="_blank" class="text-xs hover:underline underline-offset-4">
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"
+              class="inline-block w-6 h-6 mr-2">
+          </a>
+          <a href="mailto:amirali.pishdadi@gmail.com" class="text-xs hover:underline underline-offset-4">
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/gmail.png" alt="Gmail"
+              class="inline-block w-6 h-6 mr-2">
+          </a>
+          <a href="https://t.me/AmPishdadi" target="_blank" class="text-xs hover:underline underline-offset-4">
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/telegram-app.png" alt="Telegram"
+              class="inline-block w-6 h-6 mr-2">
+          </a>
+        </div>
+      </footer>
+
+    </div>
+  </body>
 </html>

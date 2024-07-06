@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Doe's Portfolio</title>
+  <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check if repositories are already stored in sessionStorage
+      let repos = sessionStorage.getItem('githubRepos');
+      if (repos) {
+        repos = JSON.parse(repos); // Parse stored JSON data
+        displayRepos(repos); // Call function to display repositories
+      } else {
+        const username = 'amirali-pishdadi';
+        axios.get(`https://api.github.com/users/${username}/repos`)
+          .then(response => {
+            repos = response.data;
+            // Store repositories in sessionStorage
+            sessionStorage.setItem('githubRepos', JSON.stringify(repos));
+            displayRepos(repos); // Call function to display repositories
+          })
+          .catch(error => {
+            console.error('Error fetching repositories:', error);
+          });
+      }
+
+      function displayRepos(repos) {
+        const projectsContainer = document.getElementById('projects-container');
+        repos.forEach(repo => {
+          const projectElement = document.createElement('div');
+          projectElement.classList.add('rounded-lg', 'bg-muted', 'p-6', 'shadow-md');
+
+          projectElement.innerHTML = `
+              <h3 class="text-xl font-bold text-foreground">${repo.name}</h3>
+              <p class="mt-2 text-muted-foreground">
+                ${repo.description || 'No description provided'}
+              </p>
+              <div class="mt-4 flex justify-between">
+                <a
+                  class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  href="${repo.html_url}"
+                  target="_blank"
+                >
+                  Live Site
+                </a>
+                <a
+                  class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  href="${repo.html_url}"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            `;
+
+          projectsContainer.appendChild(projectElement);
+        });
+      }
+    });
+  </script>
+</head>
+<body class="bg-background text-foreground font-manrope">
+  <div class="flex min-h-[100dvh] flex-col">
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-primary to-secondary py-24 md:py-32 lg:py-40">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">John Doe</h1>
+          <p class="mt-4 text-xl text-muted-foreground sm:mt-6 sm:text-2xl">Software Engineer</p>
+          <p class="mt-6 text-muted-foreground sm:mt-8 sm:text-xl">
+            I'm a passionate software engineer with a strong background in building scalable and efficient web
+            applications. I love exploring new technologies and constantly learning to improve my skills.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
+        <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">React.js</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">Node.js</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">MongoDB</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">AWS</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">Git</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">HTML/CSS</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">JavaScript</h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">Agile</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects</h2>
+        <div id="projects-container" class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Dynamic projects will be inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <p class="text-xs text-muted-foreground">© 2024 John Doe. All rights reserved.</p>
+      <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+        <a class="text-xs hover:underline underline-offset-4" href="#">Privacy</a>
+        <a class="text-xs hover:underline underline-offset-4" href="#">Terms of Service</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

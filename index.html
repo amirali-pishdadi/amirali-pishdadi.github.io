@@ -3,9 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amirali Pishdadi's Portfolio</title>
+  <title>Amirali Pishdadi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    :root {
+      --heading-font: 'Manrope', sans-serif;
+      --body-font: 'Manrope', sans-serif;
+      --radius: 0.5rem;
+      --background: hsl(240, 5%, 6%);
+      --foreground: hsl(60, 5%, 90%);
+      --primary: hsl(240, 0%, 90%);
+      --primary-foreground: hsl(60, 0%, 0%);
+      --secondary: hsl(240, 4%, 15%);
+      --secondary-foreground: hsl(60, 5%, 85%);
+      --accent: hsl(240, 0%, 13%);
+      --accent-foreground: hsl(60, 0%, 100%);
+      --muted: hsl(240, 5%, 25%);
+      --muted-foreground: hsl(60, 5%, 85%);
+      --card: hsl(240, 4%, 10%);
+      --card-foreground: hsl(60, 5%, 90%);
+      --destructive: hsl(0, 60%, 50%);
+      --destructive-foreground: hsl(0, 0%, 98%);
+      --popover: hsl(240, 5%, 15%);
+      --popover-foreground: hsl(60, 5%, 85%);
+      --border: hsl(240, 6%, 20%);
+      --input: hsl(240, 6%, 20%);
+      --ring: hsl(240, 5%, 90%);
+    }
+  
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: var(--body-font);
+    }
+  
+    h1,
+    h2,
+    h3 {
+      font-family: var(--heading-font);
+    }
+  
+    .rounded-xl {
+      border-radius: var(--radius);
+    }
+  </style>
   <script defer>
     document.addEventListener('DOMContentLoaded', function () {
       // Check if repositories are already stored in sessionStorage
@@ -40,13 +85,6 @@
               </p>
               <div class="mt-4 flex justify-between">
                 <a
-                  class="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                  href="${repo.html_url}"
-                  target="_blank"
-                >
-                  Live Site
-                </a>
-                <a
                   class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   href="${repo.html_url}"
                   target="_blank"
@@ -65,20 +103,23 @@
 <body class="bg-background text-foreground font-manrope">
   <div class="flex min-h-[100dvh] flex-col">
     <!-- Header Section -->
-    <section class="bg-gradient-to-r from-primary to-secondary py-24 md:py-32 lg:py-40">
+    <section class="bg-gradient-to-r from-[hsl(60,5%,90%)] to-[hsl(240,5%,6%)] py-24 md:py-32 lg:py-40">
       <div class="container mx-auto px-4 md:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">Amirali Pishdadi</h1>
+          <h1 class="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">Amirali Pishdadi
+          </h1>
           <p class="mt-4 text-xl text-muted-foreground sm:mt-6 sm:text-2xl">Back-end developer</p>
           <p class="mt-6 text-muted-foreground sm:mt-8 sm:text-xl">
-            I'm a passionate back-end developer with a strong background in building scalable and efficient web applications. I'm
-            currently learning everything and love exploring new technologies. At 16 years old, I enjoy programming and playing
+            I'm a passionate back-end developer with a strong background in building scalable and efficient web
+            applications. I'm
+            currently learning everything and love exploring new technologies. At 16 years old, I enjoy programming and
+            playing
             volleyball with my friends.
           </p>
-
         </div>
       </div>
     </section>
+
 
     <!-- Skills Section -->
     <section class="py-12 md:py-16 lg:py-20">
@@ -86,39 +127,70 @@
         <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
         <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">Python</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" class="inline-block w-6 h-6 mr-2">Python
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">JavaScript</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"
+                class="inline-block w-6 h-6 mr-2">JavaScript
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">PHP</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/officel/40/000000/php-logo.png" alt="PHP" class="inline-block w-6 h-6 mr-2">PHP
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">Django</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django" class="inline-block w-6 h-6 mr-2">Django
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">Laravel</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/?size=48&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel"
+                class="inline-block w-6 h-6 mr-2">Laravel
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">React</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"
+                class="inline-block w-6 h-6 mr-2">React
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">Tailwind CSS</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwind CSS"
+                class="inline-block w-6 h-6 mr-2">Tailwind CSS
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">MySQL</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL"
+                class="inline-block w-6 h-6 mr-2">MySQL
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">PowerShell</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/powershell.png" alt="PowerShell"
+                class="inline-block w-6 h-6 mr-2">PowerShell
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">Windows</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"
+                class="inline-block w-6 h-6 mr-2">Windows
+            </h3>
           </div>
           <div class="rounded-lg bg-muted p-4 shadow-md">
-            <h3 class="text-lg font-bold text-foreground">Visual Studio Code</h3>
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="Visual Studio Code"
+                class="inline-block w-6 h-6 mr-2">Visual Studio Code
+            </h3>
           </div>
         </div>
+
 
       </div>
     </section>

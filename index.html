@@ -55,6 +55,8 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Check if repositories are already stored in sessionStorage
       let repos = sessionStorage.getItem('githubRepos');
+      const displayReposList = ['django-eshop', 'django-portfolio', 'LaravelGram']; // Replace with your repo names
+
       if (repos) {
         repos = JSON.parse(repos); // Parse stored JSON data
         displayRepos(repos); // Call function to display repositories
@@ -74,9 +76,15 @@
 
       function displayRepos(repos) {
         const projectsContainer = document.getElementById('projects-container');
-        repos.forEach(repo => {
+        // Clear any existing content
+        projectsContainer.innerHTML = '';
+
+        // Filter the repositories based on the predefined list
+        const filteredRepos = repos.filter(repo => displayReposList.includes(repo.name));
+
+        filteredRepos.forEach(repo => {
           const projectElement = document.createElement('div');
-          projectElement.classList.add('rounded-lg', 'bg-muted', 'p-6', 'shadow-md');
+          projectElement.classList.add('rounded-lg', 'bg-muted', 'p-6', 'shadow-md' , "border" , "border-primary");
 
           projectElement.innerHTML = `
               <h3 class="text-xl font-bold text-foreground">${repo.name}</h3>
@@ -99,6 +107,7 @@
       }
     });
   </script>
+
 </head>
   <body class="bg-background text-foreground font-manrope">
     <div class="flex min-h-[100dvh] flex-col">
@@ -145,7 +154,7 @@
 
 
       <!-- Skills Section -->
-      <section id="skills" class="py-12 md:py-16 lg:py-20">
+      <section id="skills" class="py-12 md:py-16 lg:py-20 border-t border-primary">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
           <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
           <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -154,12 +163,12 @@
                 <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" class="inline-block w-6 h-6 mr-2">Python
               </h3>
             </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
+            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"
                   class="inline-block w-6 h-6 mr-2">JavaScript
               </h3>
-            </div>
+            </div> -->
             <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/officel/40/000000/php-logo.png" alt="PHP" class="inline-block w-6 h-6 mr-2">PHP
@@ -176,12 +185,12 @@
                   class="inline-block w-6 h-6 mr-2">Laravel
               </h3>
             </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
+            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"
                   class="inline-block w-6 h-6 mr-2">React
               </h3>
-            </div>
+            </div> -->
             <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwind CSS"
@@ -196,29 +205,40 @@
             </div>
             <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/color/48/000000/powershell.png" alt="PowerShell"
-                  class="inline-block w-6 h-6 mr-2">PowerShell
+                <img src="https://img.icons8.com/?size=48&id=cdYUlRaag9G9&format=png&color=000000" alt="Docker" class="inline-block w-6 h-6 mr-2">Docker
               </h3>
             </div>
             <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git"
+                  class="inline-block w-6 h-6 mr-2">Git
+              </h3>
+            </div>
+            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
+              <h3 class="text-lg font-bold text-foreground">
+                <img src="https://img.icons8.com/color/48/000000/powershell.png" alt="PowerShell"
+                  class="inline-block w-6 h-6 mr-2">PowerShell
+              </h3>
+            </div> -->
+            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"
                   class="inline-block w-6 h-6 mr-2">Windows
               </h3>
-            </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
+            </div> -->
+            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="Visual Studio Code"
-                  class="inline-block w-6 h-6 mr-2">Visual Studio Code
+                  class="inline-block w-6 h-6 mr-2">VS Code
               </h3>
-            </div>
+            </div> -->
           </div>
 
 
         </div>
       </section>
 
-      <section id="projects" class="py-12 md:py-16 lg:py-20">
+      <section id="projects" class="py-12 md:py-16 lg:py-20 border-t border-primary">
         <div class="container mx-auto px-4 md:px-6 lg:px-8">
           <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects</h2>
           <div id="projects-container" class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -227,12 +247,11 @@
         </div>
       </section>
 
-      <section id="contact" class="w-full py-12 md:py-24 lg:py-32" data-id="69">
+      <section id="contact" class="w-full py-12 md:py-24 lg:py-32 border-t border-primary" data-id="69">
         <div class="container px-4 md:px-6" data-id="70">
           <div class="space-y-4 text-center" data-id="71">
-            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" data-id="72">Get in Touch</h2>
-            <p class="max-w-[700px] mx-auto text-muted-foreground md:text-xl" data-id="73">Have a project in mind? Let's
-              discuss how I can help bring your ideas to life.</p>
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" data-id="72">Contact me</h2>
+            
           </div>
           <form class="max-w-md mx-auto mt-8 space-y-4" data-id="74">
             <input
@@ -268,7 +287,7 @@
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/gmail.png" alt="Gmail"
               class="inline-block w-6 h-6 mr-2">
           </a>
-          <a href="https://t.me/AmPishdadi" target="_blank" class="text-xs hover:underline underline-offset-4">
+          <a href="https://t.me/AmPi04" target="_blank" class="text-xs hover:underline underline-offset-4">
             <img src="https://img.icons8.com/ios-glyphs/30/ffffff/telegram-app.png" alt="Telegram"
               class="inline-block w-6 h-6 mr-2">
           </a>

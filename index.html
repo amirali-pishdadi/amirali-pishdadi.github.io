@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,44 +12,94 @@
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <style>
     :root {
+
       --heading-font: 'Manrope', sans-serif;
       --body-font: 'Manrope', sans-serif;
       --radius: 0.5rem;
-      --background: hsl(240, 5%, 6%);
-      --foreground: hsl(60, 5%, 90%);
-      --primary: hsl(240, 0%, 90%);
-      --primary-foreground: hsl(60, 0%, 0%);
-      --secondary: hsl(240, 4%, 15%);
-      --secondary-foreground: hsl(60, 5%, 85%);
-      --accent: hsl(240, 0%, 13%);
-      --accent-foreground: hsl(60, 0%, 100%);
-      --muted: hsl(240, 5%, 25%);
-      --muted-foreground: hsl(60, 5%, 85%);
-      --card: hsl(240, 4%, 10%);
-      --card-foreground: hsl(60, 5%, 90%);
-      --destructive: hsl(0, 60%, 50%);
-      --destructive-foreground: hsl(0, 0%, 98%);
-      --popover: hsl(240, 5%, 15%);
-      --popover-foreground: hsl(60, 5%, 85%);
-      --border: hsl(240, 6%, 20%);
-      --input: hsl(240, 6%, 20%);
-      --ring: hsl(240, 5%, 90%);
+      --background: #0d0d0d;
+      /* hsl(240, 5%, 6%) */
+      --foreground: #e5e5e5;
+      /* hsl(60, 5%, 90%) */
+      --primary: #e6e6e6;
+      /* hsl(240, 0%, 90%) */
+      --primary-foreground: #000000;
+      /* hsl(60, 0%, 0%) */
+      --secondary: #262626;
+      /* hsl(240, 4%, 15%) */
+      --secondary-foreground: #d9d9d9;
+      /* hsl(60, 5%, 85%) */
+      --accent: #212121;
+      /* hsl(240, 0%, 13%) */
+      --accent-foreground: #ffffff;
+      /* hsl(60, 0%, 100%) */
+      --muted: #404040;
+      /* hsl(240, 5%, 25%) */
+      --muted-foreground: #d9d9d9;
+      /* hsl(60, 5%, 85%) */
+      --card: #1a1a1a;
+      /* hsl(240, 4%, 10%) */
+      --card-foreground: #e5e5e5;
+      /* hsl(60, 5%, 90%) */
+      --destructive: #ff4d4d;
+      /* hsl(0, 60%, 50%) */
+      --destructive-foreground: #fafafa;
+      /* hsl(0, 0%, 98%) */
+      --popover: #262626;
+      /* hsl(240, 5%, 15%) */
+      --popover-foreground: #d9d9d9;
+      /* hsl(60, 5%, 85%) */
+      --border: #333333;
+      /* hsl(240, 6%, 20%) */
+      --input: #333333;
+      /* hsl(240, 6%, 20%) */
+      --ring: #e5e5e5;
+      /* hsl(240, 5%, 90%) */
     }
-  
+
+
+
     body {
       background-color: var(--background);
       color: var(--foreground);
       font-family: var(--body-font);
     }
-  
+
     h1,
     h2,
     h3 {
       font-family: var(--heading-font);
     }
-  
+
     .rounded-xl {
       border-radius: var(--radius);
+    }
+
+    .bg-primary {
+      background-color: var(--primary);
+    }
+
+    .text-primary {
+      color: var(--primary);
+    }
+
+    .bg-muted {
+      background-color: var(--muted);
+    }
+
+    .text-muted-foreground {
+      color: var(--muted-foreground);
+    }
+
+    .border-primary {
+      border-color: var(--primary);
+    }
+
+    .text-primary-foreground {
+      color: var(--primary-foreground);
+    }
+
+    .text-foreground {
+      color: var(--foreground);
     }
   </style>
   <script defer>
@@ -84,231 +135,242 @@
 
         filteredRepos.forEach(repo => {
           const projectElement = document.createElement('div');
-          projectElement.classList.add('rounded-lg', 'bg-muted', 'p-6', 'shadow-md' , "border" , "border-primary");
+          projectElement.classList.add('rounded-lg', 'bg-muted', 'p-6', 'shadow-md', "border", "border-primary");
 
           projectElement.innerHTML = `
-              <h3 class="text-xl font-bold text-foreground">${repo.name}</h3>
-              <p class="mt-2 text-muted-foreground">
-                ${repo.description || 'No description provided'}
-              </p>
-              <div class="mt-4 flex justify-between">
-                <a
-                  class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                  href="${repo.html_url}"
-                  target="_blank"
-                >
-                  GitHub
-                </a>
-              </div>
-            `;
+                  <h3 class="text-xl font-bold text-foreground">${repo.name}</h3>
+                  <p class="mt-2 text-muted-foreground">
+                    ${repo.description || 'No description provided'}
+                  </p>
+                  <div class="mt-4 flex justify-between">
+                    <a
+                      class="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                      href="${repo.html_url}"
+                      target="_blank"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                `;
 
           projectsContainer.appendChild(projectElement);
         });
       }
     });
+    
   </script>
 
 </head>
-  <body class="bg-background text-foreground font-manrope">
-    <div class="flex min-h-[100dvh] flex-col">
-      <header class="px-4 lg:px-6 h-14 flex items-center sticky top-0 bg-background z-50" data-id="2">
-        <a data-id="3" class="flex items-center justify-center" href="https://amirali-pishdadi.github.io/" rel="ugc">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-          <span class="sr-only">Amirali Pishdadi's Portfolio</span>
+
+<body class=" text-foreground font-manrope">
+  <div class="flex min-h-[100dvh] flex-col">
+    <header class="px-4 lg:px-6 h-14 flex items-center sticky bg-muted top-0 z-50" data-id="2">
+      <a data-id="3" class="flex items-center justify-center" href="https://amirali-pishdadi.github.io/" rel="ugc">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span class="sr-only">Amirali Pishdadi's Portfolio</span>
+      </a>
+      <nav class="ml-auto flex gap-4 sm:gap-6" data-id="4">
+        <a data-id="4" class="text-sm font-medium hover:underline underline-offset-4" href="#about-me" rel="ugc">
+          About Me
         </a>
-        <nav class="ml-auto flex gap-4 sm:gap-6" data-id="4">
-          <a data-id="4" class="text-sm font-medium hover:underline underline-offset-4" href="#about-me" rel="ugc">
-            About Me
-          </a>
-          <a data-id="5" class="text-sm font-medium hover:underline underline-offset-4" href="#projects" rel="ugc">
-            Projects
-          </a>
-          <a data-id="6" class="text-sm font-medium hover:underline underline-offset-4" href="#skills" rel="ugc">
-            Skills
-          </a>
-          <a data-id="7" class="text-sm font-medium hover:underline underline-offset-4" href="#contact" rel="ugc">
-            Contact
-          </a>
-        </nav>
-      </header>
+        <a data-id="6" class="text-sm font-medium hover:underline underline-offset-4" href="#skills" rel="ugc">
+          Skills
+        </a>
+        <a data-id="5" class="text-sm font-medium hover:underline underline-offset-4" href="#projects" rel="ugc">
+          Projects
+        </a>
+
+        <!-- <a data-id="7" class="text-sm font-medium hover:underline underline-offset-4" href="#contact" rel="ugc">
+          Contact
+        </a> -->
+      </nav>
+    </header>
 
 
-      <!-- Header Section -->
-      <section class="bg-gradient-to-r from-[hsl(60,5%,90%)] to-[hsl(240,5%,6%)] py-24 md:py-32 lg:py-40">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8">
-          <div class="mx-auto max-w-3xl text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">Amirali Pishdadi
-            </h1>
-            <p class="mt-4 text-xl text-muted-foreground sm:mt-6 sm:text-2xl">Back-end developer</p>
-            <p class="mt-6 text-muted-foreground sm:mt-8 sm:text-xl">
-              I'm a back-end developer, currently learning everything and love exploring new technologies. At 16 years old, I
-              enjoy programming and playing volleyball with my friends.
-            </p>
-          </div>
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-primary to-background py-24 md:py-32 lg:py-40">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">Amirali Pishdadi
+          </h1>
+          <p class="mt-4 text-xl text-muted-foreground sm:mt-6 sm:text-2xl">Back-end developer</p>
+          <p class="mt-6 text-muted-foreground sm:mt-8 sm:text-xl">
+            I'm a back-end developer, currently learning everything and love exploring new technologies. At 16 years
+            old, I
+            enjoy programming and playing volleyball with my friends.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
 
-      <section id="about-me" class="py-12 md:py-16 lg:py-20 border-t border-primary">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">About Me</h2>
-          <div class="mt-8 space-y-4 text-muted-foreground sm:text-xl">
-            <p><strong>Name:</strong> Amirali Pishdadi</p>
-            <p><strong>Age:</strong> 16</p>
-            <p><strong>Email:</strong> <a href="mailto:amirpishdadi4@gmail.com"
-                class="text-primary hover:underline">amirpishdadi4@gmail.com</a></p>
-            <p><strong>Phone:</strong> +989332641068</p>
-            <p><strong>Location:</strong> Iran, Seghaleh</p>
-          </div>
+    <section id="about-me" class="py-12 md:py-16 lg:py-20 border-t border-primary">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">About Me</h2>
+        <div class="mt-8 space-y-4 text-muted-foreground sm:text-xl">
+          <p><strong>Name:</strong> Amirali Pishdadi</p>
+          <p><strong>Age:</strong> 16</p>
+          <p><strong>Email:</strong> <a href="mailto:amirpishdadi4@gmail.com"
+              class="text-primary hover:underline">amirpishdadi4@gmail.com</a></p>
+          <p><strong>Phone:</strong> +989332641068</p>
+          <p><strong>Location:</strong> Iran, Seghaleh</p>
         </div>
-      </section>
+      </div>
+    </section>
 
 
-      <!-- Skills Section -->
-      <section id="skills" class="py-12 md:py-16 lg:py-20 border-t border-primary">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
-          <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" class="inline-block w-6 h-6 mr-2">Python
-              </h3>
-            </div>
-            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 md:py-16 lg:py-20 border-t border-primary">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills</h2>
+        <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"
+                class="inline-block w-6 h-6 mr-2">Python
+            </h3>
+          </div>
+          <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"
                   class="inline-block w-6 h-6 mr-2">JavaScript
               </h3>
             </div> -->
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/officel/40/000000/php-logo.png" alt="PHP" class="inline-block w-6 h-6 mr-2">PHP
-              </h3>
-            </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django" class="inline-block w-6 h-6 mr-2">Django
-              </h3>
-            </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/?size=48&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel"
-                  class="inline-block w-6 h-6 mr-2">Laravel
-              </h3>
-            </div>
-            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/officel/40/000000/php-logo.png" alt="PHP"
+                class="inline-block w-6 h-6 mr-2">PHP
+            </h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"
+                class="inline-block w-6 h-6 mr-2">Django
+            </h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/?size=48&id=lRjcvhvtR81o&format=png&color=000000" alt="Laravel"
+                class="inline-block w-6 h-6 mr-2">Laravel
+            </h3>
+          </div>
+          <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React"
                   class="inline-block w-6 h-6 mr-2">React
               </h3>
             </div> -->
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwind CSS"
-                  class="inline-block w-6 h-6 mr-2">Tailwind CSS
-              </h3>
-            </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL"
-                  class="inline-block w-6 h-6 mr-2">MySQL
-              </h3>
-            </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/?size=48&id=cdYUlRaag9G9&format=png&color=000000" alt="Docker" class="inline-block w-6 h-6 mr-2">Docker
-              </h3>
-            </div>
-            <div class="rounded-lg bg-muted p-4 shadow-md">
-              <h3 class="text-lg font-bold text-foreground">
-                <img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git"
-                  class="inline-block w-6 h-6 mr-2">Git
-              </h3>
-            </div>
-            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/?size=48&id=x7XMNGh2vdqA&format=png&color=000000" alt="Tailwind CSS"
+                class="inline-block w-6 h-6 mr-2">Tailwind CSS
+            </h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL"
+                class="inline-block w-6 h-6 mr-2">MySQL
+            </h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/?size=48&id=cdYUlRaag9G9&format=png&color=000000" alt="Docker"
+                class="inline-block w-6 h-6 mr-2">Docker
+            </h3>
+          </div>
+          <div class="rounded-lg bg-muted p-4 shadow-md">
+            <h3 class="text-lg font-bold text-foreground">
+              <img src="https://img.icons8.com/?size=48&id=20906&format=png&color=000000" alt="Git"
+                class="inline-block w-6 h-6 mr-2">Git
+            </h3>
+          </div>
+          <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/powershell.png" alt="PowerShell"
                   class="inline-block w-6 h-6 mr-2">PowerShell
               </h3>
             </div> -->
-            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
+          <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"
                   class="inline-block w-6 h-6 mr-2">Windows
               </h3>
             </div> -->
-            <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
+          <!-- <div class="rounded-lg bg-muted p-4 shadow-md">
               <h3 class="text-lg font-bold text-foreground">
                 <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="Visual Studio Code"
                   class="inline-block w-6 h-6 mr-2">VS Code
               </h3>
             </div> -->
-          </div>
+        </div>
 
+
+      </div>
+    </section>
+
+    <section id="projects" class="py-12 md:py-16 lg:py-20 border-t border-primary">
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects</h2>
+        <div id="projects-container" class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Dynamic projects will be inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="contact" class="w-full py-12 md:py-24 lg:py-32 border-t border-primary" data-id="69">
+      <div class="container px-4 md:px-6" data-id="70">
+        <div class="space-y-4 text-center" data-id="71">
+          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" data-id="72">Contact me</h2>
 
         </div>
-      </section>
-
-      <section id="projects" class="py-12 md:py-16 lg:py-20 border-t border-primary">
-        <div class="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects</h2>
-          <div id="projects-container" class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Dynamic projects will be inserted here -->
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="w-full py-12 md:py-24 lg:py-32 border-t border-primary" data-id="69">
-        <div class="container px-4 md:px-6" data-id="70">
-          <div class="space-y-4 text-center" data-id="71">
-            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" data-id="72">Contact me</h2>
-            
-          </div>
-          <form class="max-w-md mx-auto mt-8 space-y-4" data-id="74">
-            <input
-              class="flex text-black h-10 border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-              placeholder="Name" data-id="75" type="text" aria-label="Your name">
-            <input
-              class="flex h-10 text-black border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-              placeholder="Email" data-id="76" type="email" aria-label="Your email">
-            <textarea
-              class="flex min-h-[80px] text-black border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-              placeholder="Message" data-id="77" aria-label="Your message"></textarea>
-            <button
-              class="border border-dashed inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background focus-visible:ring-offset-2 h-10 w-full px-4 py-3 rounded-md bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-              type="submit" data-id="78">Send Message</button>
-          </form>
-        </div>
-      </section>
+        <form class="max-w-md mx-auto mt-8 space-y-4" data-id="74">
+          <input
+            class="flex text-black h-10 border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+            placeholder="Name" data-id="75" type="text" aria-label="Your name">
+          <input
+            class="flex h-10 text-black border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+            placeholder="Email" data-id="76" type="email" aria-label="Your email">
+          <textarea
+            class="flex min-h-[80px] text-black border border-input text-sm ring-offset-background placeholder-text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-3 rounded-md bg-muted text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+            placeholder="Message" data-id="77" aria-label="Your message"></textarea>
+          <button
+            class="border border-dashed inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background focus-visible:ring-offset-2 h-10 w-full px-4 py-3 rounded-md bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            type="submit" data-id="78">Send Message</button>
+        </form>
+      </div>
+    </section> -->
 
 
-      <!-- Footer Section -->
-      <footer class="flex flex-col gap-1 sm:flex-row py-3 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p class="text-xs text-muted-foreground">© 2024 Amirali Pishdadi. All rights reserved.</p>
-        <div class="sm:ml-auto flex gap-4 sm:gap-6 border border-dashed border-white p-2 rounded">
-          <a href="https://github.com/amirali-pishdadi" target="_blank" class="text-xs hover:underline underline-offset-4">
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub"
-              class="inline-block w-6 h-6 mr-2">
-          </a>
-          <a href="https://www.instagram.com/ampishdadi" target="_blank" class="text-xs hover:underline underline-offset-4">
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"
-              class="inline-block w-6 h-6 mr-2">
-          </a>
-          <a href="mailto:amirali.pishdadi@gmail.com" class="text-xs hover:underline underline-offset-4">
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/gmail.png" alt="Gmail"
-              class="inline-block w-6 h-6 mr-2">
-          </a>
-          <a href="https://t.me/AmPi04" target="_blank" class="text-xs hover:underline underline-offset-4">
-            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/telegram-app.png" alt="Telegram"
-              class="inline-block w-6 h-6 mr-2">
-          </a>
-        </div>
-      </footer>
+    <!-- Footer Section -->
+    <footer class="flex flex-col gap-1 sm:flex-row py-3 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <p class="text-xs text-muted-foreground">© 2024 Amirali Pishdadi. All rights reserved.</p>
+      <div class="sm:ml-auto flex gap-4 sm:gap-6 border border-dashed border-white p-2 rounded">
+        <a href="https://github.com/amirali-pishdadi" target="_blank"
+          class="text-xs hover:underline underline-offset-4">
+          <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub"
+            class="inline-block w-6 h-6 mr-2">
+        </a>
+        <a href="https://www.instagram.com/ampishdadi" target="_blank"
+          class="text-xs hover:underline underline-offset-4">
+          <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"
+            class="inline-block w-6 h-6 mr-2">
+        </a>
+        <a href="mailto:amirpishdadi4@gmail.com" class="text-xs hover:underline underline-offset-4">
+          <img src="https://img.icons8.com/ios-glyphs/30/ffffff/gmail.png" alt="Gmail"
+            class="inline-block w-6 h-6 mr-2">
+        </a>
+        <a href="https://t.me/AmPi04" target="_blank" class="text-xs hover:underline underline-offset-4">
+          <img src="https://img.icons8.com/ios-glyphs/30/ffffff/telegram-app.png" alt="Telegram"
+            class="inline-block w-6 h-6 mr-2">
+        </a>
+      </div>
+    </footer>
 
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
